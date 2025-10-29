@@ -1,0 +1,35 @@
+/* 
+    Student Number: 221752137 (NV Moloi)
+    Module: Web Development 3.2 (AIWEY3A)
+    Examiner: Mr N Leduma
+    Due Date: 31 October 2025 
+*/
+
+/* Using root for light/dark theme and global variables*/
+:root {
+    /*Light Theme*/
+    --bg-light: #f5f7fb;
+    --text-light: #1a1a1a;
+    --accent-light: #7b5cff;
+
+    /*Dark theme*/
+    --bg-dark: #0b0f14;
+    --text-dark: #e6eef3;
+    --accent-dark: #00e0c8;
+
+    --font-main: "Poppins", system-ui, sans-serif;
+    --transition: 0.3s ease;
+}
+
+/*light/dark theme to auto apply according to chosen theme*/
+[data-theme="light"] {
+    --bg: var(--bg-light);
+    --text: var(--text-light);
+    --accent: var(--accent-light);
+}
+
+[data-theme="dark"] {
+    --bg: var(--bg-dark);
+    --text: var(--text-dark);
+    --accent: var(--accent-dark);
+}
