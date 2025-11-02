@@ -1,0 +1,79 @@
+<!--
+    Student Number: 221752137 (NV Moloi)
+    Module: Web Development 3.2 (AIWEY3A)
+    Examiner: Mr N Leduma
+    Due Date: 31 October 2025
+-->
+
+
+<!-- REUSED HEAD & HEADER -->
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About | Neo Moloi Portfolio</title>
+        <link rel="stylesheet" href="assets/css/style.css">
+        <script defer src="assets/js/theme.js"></script>
+        <script defer src="assets/js/script.js"></script>
+    </head>
+
+    <body>
+        <header class="site-header">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.svg" alt="NeoTech Logo" id="logo">
+            </a>
+          
+            <nav class="navbar">
+                <ul id="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+          
+            <!--
+            Add Mobile Menu button as per project requirements.
+            Icons from piliapp.com/symbol/menu/
+            -->
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">☰</button>
+
+            <!--
+            Add dark/light button to showcase html manipulation using javascript
+            Icons from piliapp.com/emoji/list/moon
+            -->
+            <button class="theme-toggle" id="theme-toggle" aria-label="Switch Theme">🌛</button>
+        </header>
+
+        <!-- MAIN FORM -->
+        <main class="contact">
+            <section class="contact-intro reveal">
+                <h1>Get in Touch</h1>
+                <p>Have a question or want to collaborate? Fill in the form below — I’ll reply as soon as possible.</p>
+            </section>
+
+            <form id="contactForm" action="assets/php/contact.php" method="POST" class="contact-form reveal">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required />
+                
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required />
+                
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                
+                <button type="submit" class="btn">Send Message</button>
+                <p id="form-status" class="status"></p>
+            </form>
+        </main>
+
+        <!-- REUSED INDEX FOOTER (MUST BE THE SAME ACROSS ALL PAGES!) -->
+        <footer class="site-footer">
+            <p>&copy; neoforgex.github.io/web-development-3.2-final-project | 2025 | NV Moloi (221752137) | <a href="mailto:221752137@edu.vut.ac.za">221752137@edu.vut.ac.za</a> </p>
+        
+            <div class="socials">
+                <a href="https://github.com/neoForgeX/web-development-3.2-final-project" aria-label="GitHub">🖥️</a>
+            </div>
+        </footer>
+    </body>
+</html>
