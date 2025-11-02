@@ -1,0 +1,279 @@
+/* 
+    Student Number: 221752137 (NV Moloi)
+    Module: Web Development 3.2 (AIWEY3A)
+    Examiner: Mr N Leduma
+    Due Date: 31 October 2025 
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Using root for light/dark theme and global variables*/
+:root {
+    
+      /*Light theme*/
+     --bg-light: #f5f7fb;
+     --text-light: #1a1a1a;
+     --accent-light: #7b5cff;
+     --accent2-light: #00e0c8; /*added a secondary accent for BG gradient*/
+     --card-light: #ffffff;
+
+    /*Dark theme*/
+    --bg-dark: #0b0f14;
+    --text-dark: #e6eef3;
+    --accent-dark: #00e0c8;
+    --accent2-dark: #8515b1;
+    --card-dark: #101820;
+
+    --font-main: "Poppins", system-ui, sans-serif;
+    --transition: 0.3s ease;
+}
+
+/*light/dark theme to auto apply according to chosen theme*/
+[data-theme="light"] {
+    --bg: var(--bg-light);
+    --text: var(--text-light);
+    --accent: var(--accent-light);
+    --accent2: var(--accent2-light);
+    --card: var(--card-light);
+}
+
+[data-theme="dark"] {
+    --bg: var(--bg-dark);
+    --text: var(--text-dark);
+    --accent: var(--accent-dark);
+    --accent2: var(--accent2-dark);
+    --card: var(--card-dark);
+}
+
+/*--GLOBAL DECLARATIONS--*/
+
+body {
+    font-family: var(--font-main);
+    color: var(--text);
+    background: var(--bg);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; 
+    transition: background var(--transition), color var(--transition);
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+a:hover {
+    color: var(--accent2);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*--HEADER--*/
+
+.site-header {
+    background: var(--card);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/*added for logo*/
+.logo img {
+    width: 60px;
+    height: auto;
+    display: block;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navbar a {
+    font-weight: 600;
+    color: var(--text);
+    position: relative;
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width var(--transition);
+}
+
+.navbar a:hover::after, 
+.navbar a.active::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--text);
+    cursor: pointer;
+}
+
+/*makes the navbar appear as menu icon on mobile devices*/
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+  }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+        background: var(--card);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        display: none;
+        padding: 1rem 0;
+  }
+
+    .navbar ul.show {
+        display: flex;
+  }
+}
+
+.theme-toggle {
+    background: none; /*remove default button backdround and borger*/
+    border: none;
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    cursor: pointer;
+    color: var(--text);
+    transition: transform 0.5s ease;
+}
+
+.theme-toggle:hover {
+    transform: rotate(20deg);
+}
+
+/*Mobile view*/
+@media (max-width: 768px) {
+    .theme-toggle {
+        position: absolute;
+        top: 18px;
+        right: 50px;
+    }
+}
+
+/*--HERO SECTION--*/
+.hero {
+    text-align: center;
+    padding: 5rem 2rem;
+    background: linear-gradient(
+        135deg,
+        var(--accent) 0%,
+        var(--accent2) 100%
+    );
+    /*color: #fff;*/
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-inline: auto;
+}
+
+.btn {
+    background: #fff;
+    color: var(--accent);
+    padding: 0.8rem 1.6rem;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all var(--transition);
+}
+ .btn:hover {
+    background: var(--accent2);
+    color: #fff;
+ }
+
+ /*--FOOTER--*/
+ .site-footer {
+    background: var(--card);
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: auto;
+    font-size: 0.9rem;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+ }
+ 
+ .site-footer .socials {
+    margin-top: 0.5rem;
+ }
+
+ .site-footer .socials a {
+    margin: 0 8px;
+    font-size: 1.2rem;
+    transition: transform var(--transition);
+ }
+
+ .site-footer .socials a:hover {
+    transform: translate(-3px);
+ }
+
+ /*--SITE RESPONSIVE--*/
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+        background: var(--card);
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        display: none;
+    }
+    .navbar ul.show {
+        display: flex;
+    }
+}
+
+/*ABOUT PAGE STYLE*/
+
+.about {
+  padding: 4rem 2rem;
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+.about h1 {
+    font-size: 2rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.about p {
+    margin-bottom: 1.5rem;
+}
