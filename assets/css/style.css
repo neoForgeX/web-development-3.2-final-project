@@ -15,11 +15,11 @@
 :root {
     
       /*Light theme*/
-     --bg-light: #f5f7fb;
-     --text-light: #1a1a1a;
-     --accent-light: #7b5cff;
-     --accent2-light: #00e0c8; /*added a secondary accent for BG gradient*/
-     --card-light: #ffffff;
+    --bg-light: #f5f7fb;
+    --text-light: #1a1a1a;
+    --accent-light: #7b5cff;
+    --accent2-light: #00e0c8; /*added a secondary accent for BG gradient*/
+    --card-light: #ffffff;
 
     /*Dark theme*/
     --bg-dark: #0b0f14;
@@ -276,4 +276,18 @@ img {
 
 .about p {
     margin-bottom: 1.5rem;
+}
+
+.skills, .goals {
+    margin-top: 2rem;
+}
+
+.skills ul {
+    list-style: disc;
+    margin-left: 2rem;
+    color: var(--text)
+}
+
+.skills li {
+    margin: 0.4rem 0;
 }
