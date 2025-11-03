@@ -340,3 +340,61 @@ img {
 }
 .status.success { color: green; }
 .status.error { color: red; }
+
+/* QR Code section on home */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+}
+
+.qr-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+}
+
+.qr-img {
+    width: 140px;
+    height: auto;
+    border-radius: 8px;
+    padding: 8px;
+    background: var(--card);
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+/* For desktop layout */
+@media (min-width: 768px) {
+    .hero {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .qr-img {
+        width: 160px;
+    }
+}
+
+/*Pulsing effect*/
+.qr-img {
+  animation: qrPulse 3s ease-in-out infinite;
+}
+
+@keyframes qrPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 0 18px rgba(0,0,0,0.15);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+}
