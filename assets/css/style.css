@@ -17,15 +17,15 @@
       /*Light theme*/
     --bg-light: #f5f7fb;
     --text-light: #1a1a1a;
-    --accent-light: #7b5cff;
-    --accent2-light: #00e0c8; /*added a secondary accent for BG gradient*/
+    --accent-light: #005ae0;
+    --accent2-light: #ffbf00; /*added a secondary accent for BG gradient*/
     --card-light: #ffffff;
 
     /*Dark theme*/
     --bg-dark: #0b0f14;
     --text-dark: #e6eef3;
-    --accent-dark: #00e0c8;
-    --accent2-dark: #8515b1;
+    --accent-dark: #ffbf00;
+    --accent2-dark: #005ae0;
     --card-dark: #101820;
 
     --font-main: "Poppins", system-ui, sans-serif;
@@ -227,6 +227,105 @@ img {
     background: var(--accent2);
     color: #fff;
  }
+
+ /* PORTFOLIO SECTION */
+.portfolio {
+  padding: 4rem 2rem;
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+}
+
+.portfolio h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--accent);
+}
+
+.projects-grid {
+  display: flex;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.project-card {
+  position: relative;
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--card);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0.8rem;
+  background: rgba(0,0,0,0.65);
+  color: #fff;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: 0.3s ease;
+  text-align: center;
+}
+
+.project-card:hover .overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Modal ===== */
+.modal-bg {
+  position: fixed;
+  top: 0; left: 0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: var(--card);
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+}
+
+.modal h3 {
+  margin-bottom: 0.5rem;
+}
+
+.modal p {
+  margin-bottom: 1rem;
+}
+
+.modal .btn-close {
+  margin-top: 1rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
 
  /*--FOOTER--*/
  .site-footer {
